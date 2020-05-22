@@ -13,9 +13,6 @@ import java.io.IOException;
 @JsonTest
 public class BeerDtoSnakeTest extends BaseTest {
 
-    @Autowired
-    ObjectMapper objectMapper;
-
     @Test
     public void testSnake() throws JsonProcessingException {
         BeerDto beerDto = getDto();
@@ -26,7 +23,7 @@ public class BeerDtoSnakeTest extends BaseTest {
     }
 
     @Test void testDeserializationSnake() throws IOException {
-        BeerDto beerDto = objectMapper.readValue("{\"id\":\"e8648e44-46c1-4a96-b981-f46a8b38d791\",\"beer_name\":\"BeerName\",\"beer_style\":\"Ale\",\"upc\":123123123123,\"price\":12.99,\"created_date\":\"2020-05-22T13:19:35.9179052+02:00\",\"last_updated_date\":\"2020-05-22T13:19:35.91888+02:00\"}", BeerDto.class);
+        BeerDto beerDto = objectMapper.readValue("{\"beerId\":\"e8648e44-46c1-4a96-b981-f46a8b38d791\",\"beer_name\":\"BeerName\",\"beer_style\":\"Ale\",\"upc\":123123123123,\"price\":12.99,\"created_date\":\"2020-05-22T13:19:35.9179052+02:00\",\"last_updated_date\":\"2020-05-22T13:19:35.91888+02:00\"}", BeerDto.class);
 
         System.out.println(beerDto);
     }
